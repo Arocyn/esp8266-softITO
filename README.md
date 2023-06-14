@@ -18,3 +18,6 @@ Loop kısmına main kodumuzu yazarız ve bu kod orada sonsuz döngüde çalış�
 
 Serial monitorden seçeceğimiz baud değeri
 115200 baud a kadar destekliyor cihazımız
+
+ödev
+serialden girdiğimiz rakam kadar 1s yanacak 1s sönecek işlem başlıyo yazacak bitince tekrar sayı giriniz diyecek
