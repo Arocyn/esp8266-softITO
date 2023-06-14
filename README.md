@@ -15,3 +15,6 @@ NodeMCU 1.0 ESP-12E olan cihazı seçiyoruz.
 
 Setup kısmında pinlerin ayarları haberleşme vs gibi şeyleri ekleriz.
 Loop kısmına main kodumuzu yazarız ve bu kod orada sonsuz döngüde çalışır. 
+
+Serial monitorden seçeceğimiz baud değeri
+115200 baud a kadar destekliyor cihazımız
