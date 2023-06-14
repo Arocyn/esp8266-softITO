@@ -11,3 +11,7 @@ Bu işlem uzun sürecektir.
 
 Ardından Arduino idemizi kapatıp tekrar açıyoruz Port kısmından uygun portu seçip
 NodeMCU 1.0 ESP-12E olan cihazı seçiyoruz. 
+
+
+Setup kısmında pinlerin ayarları haberleşme vs gibi şeyleri ekleriz.
+Loop kısmına main kodumuzu yazarız ve bu kod orada sonsuz döngüde çalışır. 
