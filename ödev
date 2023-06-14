@@ -1,0 +1,33 @@
+#define LED_PIN 2
+
+int i = 0;
+int j = 0;
+int k = 0;
+
+char incomingByte = 0;
+int secim = 0;
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(115200);
+  Serial.println("");
+  Serial.println("Sayı giriniz:");
+
+}
+
+void loop() {
+  tekrar:
+  j = Serial.read(); 
+  if(i < j){
+    digitalWrite(LED_PIN, HIGH);
+    delay(1000);
+    digitalWrite(LED_PIN, LOW);
+    delay(1000);
+    i++;
+  }
+  if(i = j){
+    Serial.println("Bitti");
+    Serial.println("Tekrar sayı giriniz:");
+    goto tekrar;  
+  }  
+}                   
