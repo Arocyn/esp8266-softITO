@@ -14,8 +14,8 @@ void setup() {
 void loop() {
   tekrar:
   if(Serial.available()){
+    girilen = Serial.read(); 
     j = girilen-'0';
-    j = Serial.read(); 
     if(i < j){
       digitalWrite(LED_PIN, HIGH);
       delay(1000);
