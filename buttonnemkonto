@@ -1,0 +1,37 @@
+#include <DHT.h>
+#define DHTPIN 5
+#define DHTTYPE DHT11
+#define BUTTON 4
+
+int i = 0; 
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("DHTxx test");
+  pinMode(BUTTON, INPUT);
+  dht.begin();
+}
+
+void loop() {
+  
+  if(digitalRead(BUTTON) == 1){
+    delay(250);
+
+
+    float h = dht.readHumidity();
+    float t = dht.readTemperature();
+    float f = dht.readTemperature(true);
+
+    float hif = dht.computeHeatIndex(f, h);
+    float hic = dht.computeHeatIndex(t, h, false);  
+
+    Serial.println("Nem: ");
+    Serial.println(h);
+    Serial.println("Sıcaklık: ");
+    Serial.println(t);
+    Serial.println("°C");
+  }
+
+}
