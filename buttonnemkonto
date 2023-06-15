@@ -29,9 +29,12 @@ void loop() {
 
     Serial.println("Nem: ");
     Serial.println(h);
+    Serial.println(" ");
     Serial.println("Sıcaklık: ");
     Serial.println(t);
     Serial.println("°C");
+    Serial.println(" ");
+        
   }
 
 }
