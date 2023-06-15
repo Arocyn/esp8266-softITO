@@ -21,3 +21,6 @@ Serial monitorden seçeceğimiz baud değeri
 
 ödev
 serialden girdiğimiz rakam kadar 1s yanacak 1s sönecek işlem başlıyo yazacak bitince tekrar sayı giriniz diyecek
+
+
+0 255 parlaklı şu diye yazacak pot ile ayarladığımız değeri tutacak ve butona bastığımızda geri yanacak aynı değerden
