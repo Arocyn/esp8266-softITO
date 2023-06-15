@@ -1,0 +1,30 @@
+const int LED = D6;
+const int BUTTON = D2;
+const byte POT = A0;
+int POT_deger = 0;
+int PAR = 0;
+int i = 0;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED, OUTPUT);
+  pinMode(BUTTON, INPUT);
+}
+
+void loop() {
+  if(digitalRead(BUTTON) == 1){
+    delay(250);
+    POT_deger = analogRead(POT);
+    PAR = map(POT_deger, 0, 1024, 0, 255);
+    analogWrite(LED, PAR); 
+    Serial.println("Lamba Parlaklığı: "); 
+    Serial.println(PAR);
+    i = i % 2;
+  
+      if (i % 2 == 0)
+        analogWrite(LED, PAR); 
+        
+      else
+        analogWrite(LED, LOW);
+  }
+}
