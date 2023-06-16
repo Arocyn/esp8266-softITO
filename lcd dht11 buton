@@ -1,0 +1,52 @@
+#include <DHT.h>
+#include <LiquidCrystal_I2C.h> 
+#define DHTPIN 0
+#define DHTTYPE DHT11
+#define BUTTON 16
+
+int lcdColumns = 16;
+int lcdRows = 2;
+int i = 0; 
+
+LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows);  
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  Serial.begin(115200);
+  pinMode(BUTTON, INPUT);
+  dht.begin();
+}
+
+void loop() {
+  
+  if(digitalRead(BUTTON) == 1){
+    delay(250);
+    i = i + 1;
+
+    if (i % 2 == 0){
+      lcd.clear();
+      float h = dht.readHumidity();
+      float t = dht.readTemperature();
+      float f = dht.readTemperature(true);
+
+      float hif = dht.computeHeatIndex(f, h);
+      float hic = dht.computeHeatIndex(t, h, false);  
+
+      lcd.setCursor(0,0);
+      lcd.print("SICAKLIK");
+      lcd.setCursor(0,1);
+      lcd.print(t);
+    }
+
+    else{
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("SOFTITO");
+      lcd.setCursor(0,1);
+      lcd.print("OGUZHAN");
+    }
+  }
+}
